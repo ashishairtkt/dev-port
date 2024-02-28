@@ -112,6 +112,8 @@
 .btnclick {
   background-color: #8951f0 !important;
   border: none !important;
+  font-size: 20px !important;
+  padding: 10px 20px !important;
 }
 .avtar_image img {
   filter: drop-shadow(0 4px 8px #b89de9d0);
@@ -119,6 +121,12 @@
 
 .about_section {
   text-align: center;
+  margin-top: 40px;
+}
+
+.about_section p {
+  margin: 30px;
+  font-size: 22px;
 }
 
 .border_line {
@@ -137,6 +145,17 @@
   border-radius: 2rem;
 }
 
+.info_section {
+  margin-bottom: 40px;
+}
+.info_section h2,
+.skills-section h2 {
+  margin-bottom: 20px;
+}
+
+.info_section p {
+  font-size: 20px;
+}
 @keyframes moveUpDown {
   from {
     transform: translateY(0px);
@@ -156,20 +175,27 @@
 
 .skill_wrapper {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
 .skill_wrapper p {
   background-color: rgb(245, 238, 238);
-  padding: 5px;
+  padding: 10px;
   border-radius: 0.2rem;
-  font-weight: 550;
+  font-weight: 500;
   margin-bottom: 0;
+  font-size: 20px;
+  color: #66686a;
 }
 
 .skill_wrapper p:hover {
   color: #8951f0;
+}
+
+.contact-section p {
+  font-size: 20px;
+  margin-top: 30px;
 }
 
 .contact_form {
@@ -180,4 +206,34 @@
   border-radius: 0.5rem;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.footer_Section {
+  background: black;
+  color: white;
+  padding: 30px;
+}
+
+.footer_wrapper p {
+}
+
+.social_wrapper {
+  text-align: end;
+  float: inline-end;
+}
+.social_wrapper ul {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+}
+.social_wrapper ul,
+li {
+  list-style-type: none;
+  font-size: 20px;
+}
+
+.footer_bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.693);
+  padding: 10px;
+  text-align: center;
 }

@@ -1,14 +1,14 @@
-import { Container, Col, Row, Button, Image } from "react-bootstrap";
+import { Container, Col, Row, Button } from "react-bootstrap";
 
 export default function About() {
   let skills = [
     "HTML",
     "CSS3",
-    "React.Js",
-    "Next.Js",
+    "React Js",
+    "Next Js",
     "TypeScript",
     "JavaScript",
-    "Node.Js",
+    "Node Js",
     "Git",
     "GitHub",
     "Responsive Design",
@@ -23,34 +23,45 @@ export default function About() {
               <h2 className="border_line">About Me</h2>
             </div>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae
-              magni tempore tenetur nulla! Hic repudiandae quidem tempore
-              similique molestias animi maxime ratione! Fuga vitae quidem
-              eveniet dolores sapiente, officia qui.
+              Here you will find more information about me, what I do, and my
+              current skills mostly in terms of programming and technology.
             </p>{" "}
           </div>
         </Col>
       </Row>
       <Row>
         <Col>
-          <h2>Get to know me!</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae
-            magni tempore tenetur nulla! Hic repudiandae quidem tempore
-            similique molestias animi maxime ratione! Fuga vitae quidem eveniet
-            dolores sapiente, officia qui.
-          </p>{" "}
+          <div className="info_section">
+            <h2>Get to know me!</h2>
+            <p>
+              I'm a Frontend Focused Web Developer building and managing the
+              Front-end of Websites and Web Applications that leads to the
+              success of the overall product.
+              <br />
+              <br />
+              I'm passionate about sharing insights and knowledge gained
+              throughout my journey in web development. Join me on LinkedIn to
+              connect.
+              <br />
+              <br />
+              I'm open to Job opportunities where I can contribute, learn and
+              grow. If you have a good opportunity that matches my skills and
+              experience then don't hesitate to contact me.
+            </p>{" "}
+            <Button className="btnclick">Contact </Button>
+          </div>
         </Col>
         <Col>
-          <h2>My Skills</h2>
-          <div className="skill_wrapper">
-            {skills.map((item, i) => (
-              <p key={i}>{item}</p>
-            ))}
+          <div className="skills-section">
+            <h2>My Skills</h2>
+            <div className="skill_wrapper">
+              {skills.map((item, i) => (
+                <p key={i}>{item}</p>
+              ))}
+            </div>
           </div>
         </Col>
       </Row>
-      hello world
     </Container>
   );
 }

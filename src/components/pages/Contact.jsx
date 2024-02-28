@@ -1,4 +1,4 @@
-import { Container, Col, Row, Button, Image, Form } from "react-bootstrap";
+import { Container, Col, Row, Button, Form } from "react-bootstrap";
 import * as formik from "formik";
 import * as yup from "yup";
 export default function Contact() {
@@ -12,20 +12,20 @@ export default function Contact() {
       .required("Email is required"),
     message: yup.string().required("Message is required"),
   });
-
+  const handleSubmit = (event) => {
+    console.log("Form Submitted", event);
+  };
   return (
     <div className="homebg">
       <Container>
         <Row>
           <Col>
-            <div className="text-center ">
+            <div className="text-center contact-section ">
               <h2 className="border_line">Contact</h2>
 
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab
-                cupiditate ad ipsum praesentium rem? Debitis quisquam est,
-                soluta exercitationem quasi mollitia. Id sapiente, pariatur et
-                eligendi eum facere quaerat quos.
+                Feel free to Contact me by submitting the form below and I will
+                get back to you as soon as possible
               </p>
             </div>
           </Col>
@@ -35,14 +35,21 @@ export default function Contact() {
             <div className="contact_form">
               <Formik
                 validationSchema={schema}
-                onSubmit={console.log}
+                onSubmit={handleSubmit}
                 initialValues={{
                   userName: "",
                   userMailId: "",
                   message: "",
                 }}
               >
-                {({ handleSubmit, handleChange, values, touched, errors }) => (
+                {({
+                  handleSubmit,
+                  handleChange,
+                  values,
+                  touched,
+                  errors,
+                  handleBlur,
+                }) => (
                   <Form noValidate onSubmit={handleSubmit}>
                     <Row className="mb-3">
                       <Form.Group as={Col} controlId="validationFormik01">
@@ -52,6 +59,7 @@ export default function Contact() {
                           name="userName"
                           value={values.userName}
                           onChange={handleChange}
+                          onBlur={handleBlur}
                           isInvalid={!!errors.userName}
                         />
                         <Form.Control.Feedback type="invalid">
@@ -67,6 +75,7 @@ export default function Contact() {
                           name="userMailId"
                           value={values.userMailId}
                           onChange={handleChange}
+                          onBlur={handleBlur}
                           isInvalid={!!errors.userMailId}
                         />
                         <Form.Control.Feedback type="invalid">
@@ -83,6 +92,7 @@ export default function Contact() {
                           name="message"
                           value={values.message}
                           onChange={handleChange}
+                          onBlur={handleBlur}
                           isInvalid={!!errors.message}
                           rows={4}
                         />
