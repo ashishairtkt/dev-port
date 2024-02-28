@@ -3,7 +3,7 @@ import avatar from "../../assets/images/embg.png";
 
 export default function Home() {
   return (
-    <div className="homebg">
+    <div className="homebg" id="home">
       <Container>
         <Row>
           <Col xs={12} md={6}>

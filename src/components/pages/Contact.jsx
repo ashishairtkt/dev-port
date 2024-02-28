@@ -16,7 +16,7 @@ export default function Contact() {
     console.log("Form Submitted", event);
   };
   return (
-    <div className="homebg">
+    <div className="homebg" id="contact">
       <Container>
         <Row>
           <Col>

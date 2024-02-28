@@ -9,8 +9,18 @@
   background-color: white;
   padding: 20px !important;
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Add transition for box-shadow */
 }
 
+.header.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff; /* Change this to the desired background color */
+  z-index: 1000;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Add transition for box-shadow */
+}
 .nav_wrapper {
   width: 100%;
   font-weight: bold;
