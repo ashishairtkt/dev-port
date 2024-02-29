@@ -7,16 +7,11 @@ import Contact from "./components/pages/Contact";
 import UseCallbackExample from "./components/hooksexample/useCallback/useCallbackExample";
 import UseMemoExample from "./components/hooksexample/useMemo/useMemoExample";
 import Footer from "./components/pages/Footer";
+import LandingPage from "./components/pages/LandingPage";
 export default function App() {
   return (
     <div>
-      <Header />
-      <Home />
-      <About />
-      <Contact />
-
-      <Footer />
-
+      <LandingPage />
       {/* <UseCallbackExample /> */}
       {/* <UseMemoExample /> */}
     </div>
