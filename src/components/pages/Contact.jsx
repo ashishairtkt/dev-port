@@ -31,7 +31,7 @@ export default function Contact() {
           </Col>
         </Row>
         <Row style={{ display: "flex", justifyContent: "center" }}>
-          <Col lg={6} md={6} sm={10}>
+          <Col lg={6} md={10} sm={10}>
             <div className="contact_form">
               <Formik
                 validationSchema={schema}

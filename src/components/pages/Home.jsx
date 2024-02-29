@@ -33,6 +33,12 @@ export default function Home() {
             </div>
           </Col>
         </Row>
+
+        <Row>
+          <div className="home-hero__mouse-scroll-cont">
+            <div className="mouse"></div>
+          </div>
+        </Row>
       </Container>
     </div>
   );

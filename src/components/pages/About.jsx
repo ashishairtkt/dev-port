@@ -37,29 +37,29 @@ const About = () => {
                   </Col>
                 </Row>
                 <Row>
-                  <Col>
+                  <Col sm="12" md="6">
                     <div className="info_section">
                       <h2>Get to know me!</h2>
                       <p>
-                        I'm a Frontend Focused Web Developer building and
+                        I'm a <b>Frontend</b> Web Developer building and
                         managing the Front-end of Websites and Web Applications
                         that leads to the success of the overall product.
                         <br />
                         <br />
                         I'm passionate about sharing insights and knowledge
                         gained throughout my journey in web development. Join me
-                        on LinkedIn to connect.
+                        on <b>LinkedIn</b> to connect.
                         <br />
                         <br />
                         I'm open to Job opportunities where I can contribute,
                         learn, and grow. If you have a good opportunity that
                         matches my skills and experience, then don't hesitate to
-                        contact me.
+                        &nbsp;<b>contact</b> me.
                       </p>
                       <Button className="btnclick">Contact</Button>
                     </div>
                   </Col>
-                  <Col>
+                  <Col sm="12" md="6">
                     <div className="skills-section">
                       <h2>My Skills</h2>
                       <div className="skill_wrapper">
