@@ -2,7 +2,7 @@
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://github.com/ashishairtkt/dev-port/",
+  "homepage": "https://github.com/ashishairtkt/dev-port",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
