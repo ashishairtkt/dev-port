@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
-
-const sections = ["home", "about", "project", "contact"];
+import { useState, useEffect } from "react";
+import { Container, Image, Nav, Navbar } from "react-bootstrap";
+import { FaUserCircle } from "react-icons/fa";
+const sections = ["home", "about", "project", "contact", "Resume"];
 
 function Header() {
   const [activeSection, setActiveSection] = useState("home");
@@ -31,7 +31,9 @@ function Header() {
   return (
     <Navbar expand="lg" className={`header ${isSticky ? "sticky" : ""}`}>
       <Container>
-        <Navbar.Brand>React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand>
+          <FaUserCircle size={30} color="#1e1e1e" />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="justify-content-end nav_wrapper">
