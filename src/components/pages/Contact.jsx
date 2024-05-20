@@ -18,7 +18,7 @@ export default function Contact() {
     message: yup.string().required("Message is required"),
   });
   const handleSubmit = (event) => {
-    console.log("Form Submitted", event);
+    // console.log("Form Submitted", event);
     let body = {
       from_name: event.userName,
       message: event.message,
