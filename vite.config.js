@@ -1,10 +1,13 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import { VitePWA } from "vite-plugin-pwa";
+import { compression } from 'vite-plugin-compression2';
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
+    compression(), // Enable gzip compression
     VitePWA({
       workbox: {
         globPatterns: ["**/*"],
@@ -46,5 +49,34 @@ export default defineConfig({
       },
     }),
   ],
+  build: {
+    target: 'esnext', // Modern browsers
+    minify: 'terser', // Better minification
+    terserOptions: {
+      compress: {
+        drop_console: true, // Remove console logs in production
+        drop_debugger: true,
+      },
+    },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          ui: ['react-bootstrap', 'bootstrap'],
+          animation: ['framer-motion', 'react-motion'],
+        },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
+        assetFileNames: 'assets/[ext]/[name]-[hash].[ext]',
+      },
+    },
+    chunkSizeWarningLimit: 1000, // Increase chunk size warning limit
+    sourcemap: false, // Disable source maps in production
+    cssCodeSplit: true, // Split CSS into chunks
+    assetsInlineLimit: 4096, // Inline assets smaller than 4kb
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', ],
+  },
 });
 // vite.config.js / vite.config.ts
