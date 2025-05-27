@@ -1,0 +1,233 @@
+.timeline-page {
+  min-height: 100vh;
+  background: var(--background-color, #f8f9fa);
+  padding: 4rem 0;
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.timeline-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-color, #333);
+  margin-bottom: 1rem;
+}
+
+.timeline-header p {
+  font-size: 1.2rem;
+  color: var(--text-muted, #666);
+}
+
+.timeline-wrapper {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline-wrapper::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background: var(--primary-color, #f69435);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 4rem;
+  width: 50%;
+  padding: 0 3rem;
+}
+
+.timeline-item.left {
+  left: 0;
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+.timeline-content {
+  position: relative;
+  background: var(--card-bg, #fff);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-year {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary-color, #f69435);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(246, 148, 53, 0.3);
+}
+
+.timeline-dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--primary-color, #f69435);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 4px var(--background-color, #f8f9fa);
+}
+
+.timeline-item.left .timeline-dot {
+  right: -10px;
+}
+
+.timeline-item.right .timeline-dot {
+  left: -10px;
+}
+
+.timeline-info h3 {
+  color: var(--text-color, #333);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-info h4 {
+  color: var(--primary-color, #f69435);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.timeline-info p {
+  color: var(--text-muted, #666);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-badge {
+  background: var(--skill-bg, #f8f9fa);
+  color: var(--primary-color, #f69435);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid var(--primary-color, #f69435);
+  transition: all 0.3s ease;
+}
+
+.skill-badge:hover {
+  background: var(--primary-color, #f69435);
+  color: white;
+}
+
+/* Dark mode support */
+[data-theme='dark'] .timeline-content {
+  background: var(--card-bg, #1a1a1a);
+}
+
+[data-theme='dark'] .timeline-info h3 {
+  color: var(--text-color, #fff);
+}
+
+[data-theme='dark'] .timeline-info p {
+  color: var(--text-muted, #aaa);
+}
+
+[data-theme='dark'] .skill-badge {
+  background: var(--skill-bg, #2a2a2a);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timeline-wrapper::before {
+    left: 31px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .timeline-item.right {
+    left: 0;
+  }
+
+  .timeline-year {
+    left: 0;
+    transform: none;
+  }
+
+  .timeline-dot {
+    left: 21px !important;
+  }
+
+  .timeline-content {
+    padding: 1.5rem;
+  }
+
+  .timeline-header h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Animation for timeline items */
+.timeline-item {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effects */
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(246, 148, 53, 0.1), transparent);
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.timeline-content:hover::before {
+  opacity: 1;
+} 
