@@ -15,6 +15,13 @@ const About = () => {
     "SQL Basic",
   ];
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <Container id="about" fluid className="m-0 p-0">
@@ -56,7 +63,7 @@ const About = () => {
                         matches my skills and experience, then don't hesitate to
                         &nbsp;<b>contact</b> me.
                       </p>
-                      <Button className="btnclick">Contact</Button>
+                      <Button className="btnclick" onClick={scrollToContact}>Contact</Button>
                     </div>
                   </Col>
                   <Col sm="12" md="6">

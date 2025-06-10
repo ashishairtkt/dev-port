@@ -1,13 +1,15 @@
 import { memo, Suspense, lazy } from "react";
-import Header from "./Header";
+import Header from "../layout/Header";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import ErrorBoundary from "../utils/ErrorBoundary";
+import Projects from "./Projects";
+import Timeline from "./Timeline";
 
 // Lazy load components for better performance
 const Home = lazy(() => import("./Home"));
 const About = lazy(() => import("./About"));
 const Contact = lazy(() => import("./Contact"));
-const Footer = lazy(() => import("./Footer"));
+
 
 // Error Boundary Component
 
@@ -53,6 +55,16 @@ const LandingPage = memo(function LandingPage() {
               <About />
             </Suspense>
           </ErrorBoundary>
+          <ErrorBoundary>
+            <Suspense fallback={<LoadingFallback />}>
+              <Projects />
+            </Suspense>
+          </ErrorBoundary>
+          <ErrorBoundary>
+            <Suspense fallback={<LoadingFallback />}>
+              <Timeline />
+            </Suspense>
+          </ErrorBoundary>
 
           <ErrorBoundary>
             <Suspense fallback={<LoadingFallback />}>
@@ -60,11 +72,7 @@ const LandingPage = memo(function LandingPage() {
             </Suspense>
           </ErrorBoundary>
 
-          <ErrorBoundary>
-            <Suspense fallback={<LoadingFallback />}>
-              <Footer />
-            </Suspense>
-          </ErrorBoundary>
+       
         </main>
       </div>
     </HelmetProvider>

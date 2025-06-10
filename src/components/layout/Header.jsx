@@ -4,7 +4,7 @@ import { FaUserCircle, FaSun, FaMoon } from "react-icons/fa";
 import { Motion, spring } from 'react-motion';
 import './Header.css';
 
-const sections = ["home", "about", "project", "contact", "Resume"];
+const sections = ["home", "about", "projects", "contact", "Resume"];
 
 const Header = memo(function Header() {
   const [activeSection, setActiveSection] = useState("home");
@@ -45,8 +45,18 @@ const Header = memo(function Header() {
   };
 
   const handleNavClick = (section) => {
-    scrollToSection(section);
-    setActiveSection(section);
+    if (section.toLowerCase() === 'resume') {
+      // Create a link element and trigger download
+      const link = document.createElement('a');
+      link.href = '/resume.pdf';
+      link.download = 'Ashish_Singh_Rathod_Resume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      scrollToSection(section);
+      setActiveSection(section);
+    }
   };
 
   return (

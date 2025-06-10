@@ -1,100 +1,69 @@
-import { motion } from 'framer-motion';
-import { Container } from 'react-bootstrap';
-import './Timeline.css';
+import '../../styles/pages/Timeline.css';
 
 const Timeline = () => {
-  const experiences = [
+  const timelineData = [
     {
-      year: '2024',
-      title: 'Senior Frontend Developer',
-      company: 'Tech Company',
-      description: 'Leading frontend development initiatives, implementing modern React patterns, and mentoring junior developers.',
-      skills: ['React', 'TypeScript', 'Next.js', 'GraphQL'],
-    },
-    {
-      year: '2023',
+      year: '2022 to till now',
       title: 'Frontend Developer',
-      company: 'Digital Agency',
-      description: 'Developed responsive web applications and collaborated with UX designers to implement pixel-perfect designs.',
-      skills: ['React', 'JavaScript', 'CSS3', 'REST APIs'],
+      company: 'Aero Flight Technology',
+      description: 'Leading development of enterprise-scale applications using React and Node.js. Implementing microservices architecture and cloud solutions.',
+      skills: ['React', 'JavaScript','Node.js', 'AWS', 'Docker', 'Kubernetes']
     },
     {
       year: '2022',
-      title: 'Junior Developer',
-      company: 'Startup',
-      description: 'Built and maintained web applications, worked on bug fixes, and implemented new features.',
-      skills: ['HTML5', 'CSS3', 'JavaScript', 'React'],
+      title: 'Full Stack Developer',
+      company: 'TechRBM',
+      description: 'Developed and maintained multiple web applications. Implemented CI/CD pipelines and automated testing procedures.',
+      skills: ['React', 'Node.js','JavaScript',  'MongoDB', 'Git','Azure']
     },
-    // Add more experiences as needed
+    {
+      year: '2020',
+      title: 'Software Developer Intern',
+      company: 'P S  Softtech PVT LTD',
+      description: 'Created responsive and interactive user interfaces. Collaborated with UX designers to implement modern design patterns.',
+      skills: ['HTML', 'CSS', 'JavaScript', 'React', 'SASS' ]
+    },
+    
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
-
   return (
-    <Container fluid className="timeline-page">
-      <Container className="timeline-container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="timeline-header"
-        >
-          <h1>My Journey</h1>
-          <p>A timeline of my professional experience and growth</p>
-        </motion.div>
+    <div className="timeline-page">
+      <div className="timeline-background">
+        <div className="timeline-dot"></div>
+        <div className="timeline-dot"></div>
+        <div className="timeline-dot"></div>
+        <div className="timeline-dot"></div>
+        <div className="timeline-dot"></div>
+      </div>
+      <div className="timeline-wave"></div>
+      <div className="timeline-container">
+        <div className="timeline-header">
+          <h1>Professional Journey</h1>
+          <p>Explore my career progression and key milestones in software development</p>
+        </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="timeline-wrapper"
-        >
-          {experiences.map((experience, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}
-            >
+        <div className="timeline-wrapper">
+          {timelineData.map((item, index) => (
+            <div key={index} className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
               <div className="timeline-content">
-                <div className="timeline-year">{experience.year}</div>
+                <div className="timeline-year">{item.year}</div>
                 <div className="timeline-dot"></div>
                 <div className="timeline-info">
-                  <h3>{experience.title}</h3>
-                  <h4>{experience.company}</h4>
-                  <p>{experience.description}</p>
+                  <h3>{item.title}</h3>
+                  <h4>{item.company}</h4>
+                  <p>{item.description}</p>
                   <div className="timeline-skills">
-                    {experience.skills.map((skill, skillIndex) => (
-                      <span key={skillIndex} className="skill-badge">
-                        {skill}
-                      </span>
+                    {item.skills.map((skill, skillIndex) => (
+                      <span key={skillIndex} className="skill-badge">{skill}</span>
                     ))}
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
-      </Container>
-    </Container>
+        </div>
+      </div>
+    </div>
   );
 };
 

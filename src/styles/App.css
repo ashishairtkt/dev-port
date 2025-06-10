@@ -135,14 +135,14 @@
 }
 
 .homebg {
-  background-image: url(./assets/images/subtle-prism-light.svg);
+  background-image: url(../assets/images/subtle-prism-light.svg);
   padding-top: 60px;
   padding-bottom: 60px;
   transition: background-image var(--transition-speed);
 }
 
 [data-theme='dark'] .homebg {
-  background-image: url(./assets/images/subtle-prism-dark.svg);
+  background-image: url(../assets/images/subtle-prism-dark.svg);
 }
 
 .headline {
@@ -272,10 +272,24 @@
   gap: 20px;
   padding: 0;
 }
-.social_wrapper ul,
-li {
+.social_wrapper ul li {
   list-style-type: none;
   font-size: 20px;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.social_wrapper ul li:hover {
+  transform: translateY(-3px);
+  color: #8951f0;
+}
+
+.social_wrapper ul li svg {
+  transition: all 0.3s ease;
+}
+
+.social_wrapper ul li:hover svg {
+  transform: scale(1.2);
 }
 
 .footer_bottom {

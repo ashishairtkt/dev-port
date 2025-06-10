@@ -6,11 +6,32 @@ import { PiInstagramLogoFill } from "react-icons/pi";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const socialMediaIcons = [
-    { icon: <FaLinkedin />, urlLink: "LinkedIn" },
-    { icon: <PiInstagramLogoFill />, urlLink: "Instagram" },
-    { icon: <FaGithub />, urlLink: "GitHub" },
-    { icon: <SiGmail />, urlLink: "Gmail" },
+    { 
+      icon: <FaLinkedin />, 
+      urlLink: "https://www.linkedin.com/in/ashish-singh-rathod/",
+      label: "LinkedIn"
+    },
+    { 
+      icon: <PiInstagramLogoFill />, 
+      urlLink: "https://www.instagram.com/ashish_singh_rathod/",
+      label: "Instagram"
+    },
+    { 
+      icon: <FaGithub />, 
+      urlLink: "https://github.com/ashish-singh-rathod",
+      label: "GitHub"
+    },
+    { 
+      icon: <SiGmail />, 
+      urlLink: "mailto:ashishsinghrathod@gmail.com",
+      label: "Gmail"
+    },
   ];
+
+  const handleSocialClick = (url) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <div className="footer_Section">
       <Container>
@@ -30,7 +51,14 @@ export default function Footer() {
               <h2>SOCIAL</h2>
               <ul>
                 {socialMediaIcons.map((socialMedia, index) => (
-                  <li key={index}>{socialMedia.icon}</li>
+                  <li 
+                    key={index}
+                    onClick={() => handleSocialClick(socialMedia.urlLink)}
+                    title={socialMedia.label}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    {socialMedia.icon}
+                  </li>
                 ))}
               </ul>
             </div>
