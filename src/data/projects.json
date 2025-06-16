@@ -1,11 +1,88 @@
+
+
+
 {
   "projects": [
+        {
+      "id": 1,
+      "title": "Airtktclub - Booking Platform",
+      "description": "An online flight booking platform enabling users to search and book flights with features like rescheduling, baggage options, and printable e-tickets.",
+      "longDescription": "Airtktclub is a comprehensive flight booking platform where users can search for flights based on locations, dates, and passenger count. The platform includes an admin panel to manage bookings—such as rescheduling, changing seats, and adding baggage. Built with React.js and Bootstrap, the site ensures smooth UI performance and responsive design.",
+      "image": "src/assets/images/airtkt.png",
+      "technologies": [
+        "React.js",
+        "Bootstrap",
+        "JavaScript",
+        "AWS",
+        "Webpack"
+      ],
+      "github": null,
+      "live": "https://www.airtktclub.com/social-login/?lg=en",
+      "features": [
+        "Search and book flights with dynamic filters",
+        "Admin panel for rescheduling, cancellations, and seat changes",
+        "Add baggage and print e-tickets",
+        "Responsive UI with performance optimizations",
+        "Deployed on AWS"
+      ],
+      "challenges": "Ensuring responsive performance while dealing with complex UI logic was a challenge. Used optimized component rendering and efficient state management to solve this.",
+      "role": "Frontend developer responsible for building and optimizing booking and admin features."
+    },
+    {
+      "id": 2,
+      "title": "S1L Mortgage Tools",
+      "description": "A set of online tools for mortgage, refinance, and HELOC calculations, enhancing financial decision-making for users.",
+      "longDescription": "Developed for Synergy One Lending, this project includes calculators for Mortgage, Home Refinance, and HELOC. It supports users in making informed financial decisions. The tools were built using React.js with MUI and deployed on Azure.",
+      "image": "src/assets/images/s1l.png",
+      "technologies": [
+        "React.js",
+        "Node.js",
+        "Bootstrap",
+        "Material UI",
+        "Azure"
+      ],
+      "github": null,
+      "live": "https://s1l.com/",
+      "features": [
+        "Interactive mortgage, refinance, and HELOC calculators",
+        "Responsive design for various devices",
+        "Client collaboration for feature alignment",
+        "Data input validation and real-time results"
+      ],
+      "challenges": "Ensuring precise financial logic and intuitive UI was challenging. Collaborated with clients to validate formulas and improve usability.",
+      "role": "Frontend developer responsible for tool development, UI/UX design, and client interaction."
+    },
+    {
+      "id": 3,
+      "title": "Study Metro - Education Platform",
+      "description": "A platform helping international students search and apply to global universities.",
+      "longDescription": "Study Metro is an online admission platform aimed at connecting students with universities across the globe. Built using React and Redux, it features reusable UI components, dynamic search filtering, and smooth API integration for real-time data fetching.",
+      "image": "src/assets/images/studymetro.png",
+      "technologies": [
+        "React.js",
+        "Redux",
+        "Bootstrap",
+        "JavaScript",
+        "GitHub"
+      ],
+      "github": null,
+      "live": "https://www.studymetro.com/",
+      "features": [
+        "Search and filter universities dynamically",
+        "Reusable and scalable components",
+        "Smooth API integration",
+        "Collaborative data management",
+        "Responsive UI for better accessibility"
+      ],
+      "challenges": "Managing real-time data and user search filtering efficiently required careful design of API calls and component reusability.",
+      "role": "Frontend intern focused on building reusable components and implementing data-driven search functionality."
+    },
     {
       "id": 1,
       "title": "Portfolio Website",
       "description": "A modern, responsive portfolio website built with React and Bootstrap, featuring smooth animations and a clean design.",
       "longDescription": "This portfolio website showcases my skills and projects in an interactive and engaging way. Built with React and Bootstrap, it features smooth animations powered by Framer Motion, responsive design, and a clean, modern UI. The site includes sections for projects, skills, and contact information, all wrapped in a beautiful, user-friendly interface.",
-      "image": "/images/portfolio.jpg",
+      "image": "src/assets/images/portfolio.png",
       "technologies": [
         "React",
         "Bootstrap",
@@ -13,7 +90,7 @@
         "CSS3"
       ],
       "github": "https://github.com/yourusername/portfolio",
-      "live": "https://your-portfolio-url.com",
+      "live": "https://ashishrathod.xyz/",
       "features": [
         "Responsive design that works seamlessly across all devices",
         "Smooth animations and transitions using Framer Motion",
@@ -23,57 +100,7 @@
       ],
       "challenges": "One of the main challenges was implementing smooth animations while maintaining performance. I solved this by using Framer Motion's optimized animation system and implementing proper code splitting. Another challenge was creating a responsive design that looks great on all devices, which I addressed using Bootstrap's grid system and custom media queries.",
       "role": "Full-stack developer responsible for design, development, and deployment. Implemented all features and animations, ensuring optimal performance and user experience."
-    },
-    {
-      "id": 2,
-      "title": "E-Commerce Platform",
-      "description": "A full-featured e-commerce platform with product management, shopping cart, and secure payment integration.",
-      "longDescription": "A comprehensive e-commerce solution built with React and Node.js, featuring product management, user authentication, shopping cart functionality, and secure payment processing. The platform includes an admin dashboard for managing products, orders, and user accounts.",
-      "image": "/images/ecommerce.jpg",
-      "technologies": [
-        "React",
-        "Node.js",
-        "MongoDB",
-        "Express",
-        "Stripe"
-      ],
-      "github": "https://github.com/yourusername/ecommerce",
-      "live": "https://your-ecommerce-url.com",
-      "features": [
-        "User authentication and authorization",
-        "Product catalog with search and filtering",
-        "Shopping cart and wishlist functionality",
-        "Secure payment processing with Stripe",
-        "Admin dashboard for inventory management",
-        "Order tracking and history"
-      ],
-      "challenges": "Implementing secure payment processing was a significant challenge. I solved this by using Stripe's API and implementing proper security measures. Another challenge was managing the shopping cart state across different pages, which I addressed using Redux for state management.",
-      "role": "Lead developer responsible for architecture design, frontend development, and integration with backend services. Implemented core features and ensured security best practices."
-    },
-    {
-      "id": 3,
-      "title": "Task Management App",
-      "description": "A collaborative task management application with real-time updates and team collaboration features.",
-      "longDescription": "A modern task management application that helps teams organize and track their work effectively. Built with React and Firebase, it features real-time updates, team collaboration, and intuitive task organization. The app includes features like task assignment, progress tracking, and deadline management.",
-      "image": "/images/taskmanager.jpg",
-      "technologies": [
-        "React",
-        "Firebase",
-        "Material-UI",
-        "Redux"
-      ],
-      "github": "https://github.com/yourusername/task-manager",
-      "live": "https://your-taskmanager-url.com",
-      "features": [
-        "Real-time task updates and notifications",
-        "Team collaboration and task assignment",
-        "Progress tracking and deadline management",
-        "Customizable task categories and labels",
-        "User roles and permissions",
-        "Data visualization and reporting"
-      ],
-      "challenges": "Implementing real-time updates was challenging. I solved this using Firebase's real-time database and proper state management. Another challenge was handling concurrent updates, which I addressed using optimistic updates and proper conflict resolution.",
-      "role": "Full-stack developer responsible for frontend development, Firebase integration, and real-time functionality. Implemented core features and ensured smooth user experience."
     }
+   
   ]
 } 

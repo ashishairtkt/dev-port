@@ -3,24 +3,24 @@ import '../../styles/pages/Timeline.css';
 const Timeline = () => {
   const timelineData = [
     {
-      year: '2022 to till now',
+      year: 'Sep 2022 to till now',
       title: 'Frontend Developer',
       company: 'Aero Flight Technology',
-      description: 'Leading development of enterprise-scale applications using React and Node.js. Implementing microservices architecture and cloud solutions.',
+      description: 'Implemented flight search features based on locations, dates, and passenger count. Built an admin panel for rescheduling, seat changes, cancellations, baggage addition, and e-ticket printing. Optimized React component rendering for better UI responsiveness. Collaborated with the team using Git and GitHub for version control, code reviews, and pull requests.',
       skills: ['React', 'JavaScript','Node.js', 'AWS', 'Docker', 'Kubernetes']
     },
     {
-      year: '2022',
+      year: 'Apr 2021 – Aug 2022',
       title: 'Full Stack Developer',
       company: 'TechRBM',
-      description: 'Developed and maintained multiple web applications. Implemented CI/CD pipelines and automated testing procedures.',
+      description: 'Developed and maintained a web application using React.js and Node.js with responsive UI, reusable components, and RESTful API integration. Contributed to the Synergy One Lending project, collaborating with U.S. clients. Built tools like Mortgage, Refinance, and HELOC calculators to improve user experience and meet business requirements.',
       skills: ['React', 'Node.js','JavaScript',  'MongoDB', 'Git','Azure']
     },
     {
-      year: '2020',
+      year: 'Jul 2020 – Feb 2021',
       title: 'Software Developer Intern',
-      company: 'P S  Softtech PVT LTD',
-      description: 'Created responsive and interactive user interfaces. Collaborated with UX designers to implement modern design patterns.',
+      company: 'PS Softech Education Pvt. Ltd.',
+      description: 'Developed an international student admission platform enabling users to explore and apply to universities worldwide. Built reusable React components, added dynamic filtering and data-fetching for improved UX, and integrated APIs to ensure smooth frontend-backend communication. Contributed to a scalable, user-friendly solution supporting a diverse global audience.',
       skills: ['HTML', 'CSS', 'JavaScript', 'React', 'SASS' ]
     },
     
@@ -43,7 +43,7 @@ const Timeline = () => {
         </div>
 
         <div className="timeline-wrapper">
-          {timelineData.map((item, index) => (
+          {timelineData.reverse().map((item, index) => (
             <div key={index} className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
               <div className="timeline-content">
                 <div className="timeline-year">{item.year}</div>

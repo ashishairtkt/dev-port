@@ -12,7 +12,7 @@ const About = () => {
     "Git",
     "GitHub",
     "Responsive Design",
-    "SQL Basic",
+    "SQL",
   ];
 
   const scrollToContact = () => {

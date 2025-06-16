@@ -103,7 +103,7 @@ const Projects = () => {
                 <motion.div variants={cardVariants}>
                   <Card className="project-card h-100">
                     <div className="project-image-container">
-                      {!imageLoadError[project.id] ? (
+                      
                         <Card.Img 
                           variant="top" 
                           src={project.image} 
@@ -111,12 +111,14 @@ const Projects = () => {
                           onError={() => handleImageError(project.id)}
                           loading="lazy"
                         />
-                      ) : (
+                      {/* )  */}
+                      {/* : (
                         <div className="image-placeholder">
                           <FaImage size={40} />
                           <span>Image not available</span>
                         </div>
-                      )}
+                      ) */}
+                      
                       <motion.div 
                         className="project-overlay"
                         whileHover={{ opacity: 1 }}
@@ -156,7 +158,7 @@ const Projects = () => {
                       </motion.div>
                     </Card.Body>
                     <Card.Footer className="project-links">
-                      <motion.a 
+                      {/* <motion.a 
                         href={project.github} 
                         target="_blank" 
                         rel="noopener noreferrer" 
@@ -165,7 +167,7 @@ const Projects = () => {
                         whileTap={{ scale: 0.95 }}
                       >
                         <FaGithub /> GitHub
-                      </motion.a>
+                      </motion.a> */}
                       <motion.a 
                         href={project.live} 
                         target="_blank" 
@@ -209,20 +211,16 @@ const Projects = () => {
                     className="modal-image-container"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                  >
-                    {!imageLoadError[selectedProject.id] ? (
+                  ><>
+                  
                       <img 
                         src={selectedProject.image} 
                         alt={selectedProject.title} 
                         className="modal-image"
                         onError={() => handleImageError(selectedProject.id)}
-                      />
-                    ) : (
-                      <div className="image-placeholder">
-                        <FaImage size={60} />
-                        <span>Image not available</span>
-                      </div>
-                    )}
+                      /></>
+                 
+                    
                   </motion.div>
                   <div className="modal-details">
                     <h4>Project Overview</h4>
@@ -257,14 +255,14 @@ const Projects = () => {
                 <Button variant="secondary" onClick={() => setSelectedProject(null)}>
                   Close
                 </Button>
-                <Button 
+                {/* <Button 
                   variant="primary" 
                   href={selectedProject.github}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <FaGithub /> View on GitHub
-                </Button>
+                </Button> */}
                 <Button 
                   variant="success" 
                   href={selectedProject.live}
