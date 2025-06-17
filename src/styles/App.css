@@ -135,14 +135,14 @@
 }
 
 .homebg {
-  background-image: url(../assets/images/subtle-prism-light.svg);
+  background-image: url(/images/subtle-prism-light.svg);
   padding-top: 60px;
   padding-bottom: 60px;
   transition: background-image var(--transition-speed);
 }
 
 [data-theme='dark'] .homebg {
-  background-image: url(../assets/images/subtle-prism-dark.svg);
+  background-image: url(/images/subtle-prism-dark.svg);
 }
 
 .headline {

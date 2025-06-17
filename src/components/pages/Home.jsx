@@ -1,7 +1,14 @@
 import { Container, Col, Row, Button, Image } from "react-bootstrap";
-import avatar from "../../assets/images/embg.png";
+import avatar from "/images/embg.png";
 
 export default function Home() {
+  const scrollToProjects = () => {
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="homebg" id="home">
       <Container>
@@ -23,7 +30,7 @@ export default function Home() {
 
               <p>Let's build something amazing together! 💻✨</p>
               <div>
-                <Button className="btnclick">Click here</Button>
+                <Button className="btnclick" onClick={scrollToProjects}>View My Work</Button>
               </div>
             </div>
           </Col>
