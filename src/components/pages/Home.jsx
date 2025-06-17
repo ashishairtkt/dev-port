@@ -1,5 +1,4 @@
-import { Container, Col, Row, Button, Image } from "react-bootstrap";
-import avatar from "/images/embg.png";
+import { Container, Col, Row, Button } from "react-bootstrap";
 
 export default function Home() {
   const scrollToProjects = () => {
@@ -36,7 +35,10 @@ export default function Home() {
           </Col>
           <Col xs={12} md={6}>
             <div className="avtar_image">
-              <Image src={avatar} alt="avatar" className="img-fluid" />
+              <picture>
+                <source srcSet="/images/optimized-embg.webp" type="image/webp" />
+                <img src="/images/optimized-embg.png" alt="avatar" className="img-fluid" loading="lazy" />
+              </picture>
             </div>
           </Col>
         </Row>

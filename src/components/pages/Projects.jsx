@@ -88,7 +88,7 @@ const Projects = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="section-title">What I’ve Built</h2>
+          <h2 className="section-title">What I've Built</h2>
           <p className="section-subtitle">A showcase of my recent work and technical expertise</p>
         </motion.div>
         <motion.div
@@ -98,91 +98,89 @@ const Projects = () => {
           className="projects-grid"
         >
           <Row className="g-4">
-            {projectsData.projects.map((project) => (
-              <Col key={project.id} md={6} lg={4}>
-                <motion.div variants={cardVariants}>
-                  <Card className="project-card h-100">
-                    <div className="project-image-container">
-                      
-                        <Card.Img 
-                          variant="top" 
-                          src={project.image} 
-                          alt={project.title}
-                          onError={() => handleImageError(project.id)}
-                          loading="lazy"
-                        />
-                      {/* )  */}
-                      {/* : (
-                        <div className="image-placeholder">
-                          <FaImage size={40} />
-                          <span>Image not available</span>
-                        </div>
-                      ) */}
-                      
-                      <motion.div 
-                        className="project-overlay"
-                        whileHover={{ opacity: 1 }}
-                        initial={{ opacity: 0 }}
-                      >
-                        <Button 
-                          variant="light" 
-                          className="view-project-btn"
-                          onClick={() => setSelectedProject(project)}
+            {projectsData.projects.map((project) => {
+              // Derive the base name from the image path
+              const baseName = project.image.split('/').pop().replace(/\.[^.]+$/, '');
+              return (
+                <Col key={project.id} md={6} lg={4}>
+                  <motion.div variants={cardVariants}>
+                    <Card className="project-card h-100">
+                      <div className="project-image-container">
+                        <picture>
+                          <source srcSet={`/images/optimized-${baseName}.webp`} type="image/webp" />
+                          <img
+                            src={`/images/optimized-${baseName}.png`}
+                            alt={project.title}
+                            onError={() => handleImageError(project.id)}
+                            loading="lazy"
+                            className="card-img-top"
+                          />
+                        </picture>
+                        <motion.div 
+                          className="project-overlay"
+                          whileHover={{ opacity: 1 }}
+                          initial={{ opacity: 0 }}
+                        >
+                          <Button 
+                            variant="light" 
+                            className="view-project-btn"
+                            onClick={() => setSelectedProject(project)}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            View Details
+                          </Button>
+                        </motion.div>
+                      </div>
+                      <Card.Body>
+                        <Card.Title>{project.title}</Card.Title>
+                        <Card.Text>{project.description}</Card.Text>
+                        <motion.div 
+                          className="technologies"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ delay: 0.2 }}
+                        >
+                          {project.technologies.map((tech, i) => (
+                            <motion.span 
+                              key={i} 
+                              className="tech-badge"
+                              whileHover={{ scale: 1.1 }}
+                              whileTap={{ scale: 0.95 }}
+                            >
+                              {getTechIcon(tech)}
+                              {tech}
+                            </motion.span>
+                          ))}
+                        </motion.div>
+                      </Card.Body>
+                      <Card.Footer className="project-links">
+                        {/* <motion.a 
+                          href={project.github} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="btn btn-outline-primary me-2"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                         >
-                          View Details
-                        </Button>
-                      </motion.div>
-                    </div>
-                    <Card.Body>
-                      <Card.Title>{project.title}</Card.Title>
-                      <Card.Text>{project.description}</Card.Text>
-                      <motion.div 
-                        className="technologies"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.2 }}
-                      >
-                        {project.technologies.map((tech, i) => (
-                          <motion.span 
-                            key={i} 
-                            className="tech-badge"
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.95 }}
-                          >
-                            {getTechIcon(tech)}
-                            {tech}
-                          </motion.span>
-                        ))}
-                      </motion.div>
-                    </Card.Body>
-                    <Card.Footer className="project-links">
-                      {/* <motion.a 
-                        href={project.github} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="btn btn-outline-primary me-2"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <FaGithub /> GitHub
-                      </motion.a> */}
-                      <motion.a 
-                        href={project.live} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="btn btn-primary"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <FaExternalLinkAlt /> Live Demo
-                      </motion.a>
-                    </Card.Footer>
-                  </Card>
-                </motion.div>
-              </Col>
-            ))}
+                          <FaGithub /> GitHub
+                        </motion.a> */}
+                        <motion.a 
+                          href={project.live} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="btn btn-primary"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <FaExternalLinkAlt /> Live Demo
+                        </motion.a>
+                      </Card.Footer>
+                    </Card>
+                  </motion.div>
+                </Col>
+              );
+            })}
           </Row>
         </motion.div>
       </Container>
