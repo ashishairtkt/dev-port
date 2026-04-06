@@ -121,6 +121,14 @@ export default defineConfig({
     cssCodeSplit: true,
     assetsInlineLimit: 4096
   },
+  server: {
+    host: '0.0.0.0',
+    port: 3000
+  },
+  preview: {
+    host: '0.0.0.0',
+    port: 3000
+  },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom', 'react-bootstrap', 'bootstrap', 'framer-motion']
   }
