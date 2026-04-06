@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls e:/dev-port/.render* e:/dev-port/railway* e:/dev-port/vercel*)",
+      "Bash(ls -la e:/dev-port/.yarn* e:/dev-port/.yarnrc*)"
+    ]
+  }
+}
