@@ -5,7 +5,7 @@
 	}
 }
 
-:3000 {
+:{$PORT:3000} {
 	bind 0.0.0.0
 	root * /app/dist
 	file_server
