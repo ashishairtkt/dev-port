@@ -2,10 +2,9 @@
 	auto_https off
 }
 
-0.0.0.0:3000
-
-root * /app/dist
-
-file_server
-
-try_files {path} /index.html
+0.0.0.0:3000 {
+	bind 0.0.0.0
+	root * /app/dist
+	file_server
+	try_files {path} /index.html
+}
