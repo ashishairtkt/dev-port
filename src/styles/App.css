@@ -1,14 +1,27 @@
 :root {
   --background: #ffffff;
+  --background-color: #ffffff;
   --text-color: #333333;
+  --text-primary: #333333;
+  --text-muted: #6c757d;
+  --primary-color: #8951f0;
+  --card-bg: #ffffff;
+  --skill-bg: rgb(245, 238, 238);
+  --header-bg: #ffffff;
+  --hover-bg: rgba(0, 0, 0, 0.05);
   --transition-speed: 0.3s;
 }
 
 [data-theme='dark'] {
   --background: #121212;
+  --background-color: #121212;
   --text-color: #ffffff;
-  --header-bg: #1a1a1a;
   --text-primary: #ffffff;
+  --text-muted: #b0b0b0;
+  --primary-color: #8951f0;
+  --card-bg: #2d2d2d;
+  --skill-bg: rgba(137, 81, 240, 0.12);
+  --header-bg: #1a1a1a;
   --hover-bg: rgba(255, 255, 255, 0.1);
 }
 
@@ -226,13 +239,14 @@
 }
 
 .skill_wrapper p {
-  background-color: rgb(245, 238, 238);
+  background-color: var(--skill-bg);
   padding: 10px;
   border-radius: 0.2rem;
   font-weight: 500;
   margin-bottom: 0;
   font-size: 20px;
-  color: #66686a;
+  color: var(--text-muted);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
 .skill_wrapper p:hover {
@@ -439,7 +453,7 @@
 .mouse {
   width: 25px;
   height: 40px;
-  border: 2px solid #333;
+  border: 2px solid var(--text-color);
   border-radius: 60px;
   position: relative;
   overflow: hidden;
@@ -452,7 +466,7 @@
   top: 7px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #333;
+  background-color: var(--text-color);
   border-radius: 50%;
   opacity: 1;
   animation: wheel 1.3s infinite;
@@ -618,7 +632,7 @@
   color: #4caf50;
   font-weight: 500;
   p {
-    color: black;
+    color: var(--text-color);
   }
 }
 .success-checkmark {
@@ -865,13 +879,6 @@
   color: var(--text-primary, #333);
 }
 
-/* Dark mode styles */
-[data-theme='dark'] {
-  --header-bg: #1a1a1a;
-  --text-primary: #ffffff;
-  --hover-bg: rgba(255, 255, 255, 0.1);
-}
-
 [data-theme='dark'] .header {
   box-shadow: rgba(255, 255, 255, 0.1) 0px 10px 10px -10px;
 }
@@ -886,4 +893,22 @@
 
 [data-theme='dark'] .theme-toggle:hover {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .contact_form {
+  background-color: var(--card-bg);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px 0px, rgba(0, 0, 0, 0.5) 0px 2px 16px 0px;
+}
+
+[data-theme='dark'] .skill_wrapper p:hover {
+  color: var(--primary-color);
+  background-color: rgba(137, 81, 240, 0.2);
+}
+
+[data-theme='dark'] .footer_Section {
+  background: #0a0a0a;
+}
+
+[data-theme='dark'] .app {
+  background-color: var(--background-color);
 }

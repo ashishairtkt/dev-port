@@ -1,5 +1,4 @@
 import { memo, Suspense, lazy } from "react";
-import Header from "../layout/Header";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import ErrorBoundary from "../utils/ErrorBoundary";
 import Projects from "./Projects";
@@ -42,7 +41,6 @@ const LandingPage = memo(function LandingPage() {
 
       <SkipLink />
       <div className="landing-page">
-        <Header />
         <main id="main-content">
           <ErrorBoundary>
             <Suspense fallback={<LoadingFallback />}>
